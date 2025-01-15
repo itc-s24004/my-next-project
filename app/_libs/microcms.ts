@@ -26,7 +26,7 @@ export type News = {
 };
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
-  throw new Error("MMICROCMS_SERVICE_DOMAIN is required");
+  throw new Error("MICROCMS_SERVICE_DOMAIN is required");
 }
 
 if (!process.env.MICROCMS_API_KEY) {
