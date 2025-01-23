@@ -6,7 +6,6 @@ import SearchField from "../_components/SearchField";
 
 
 
-export const revalidate = 60;
 
 export default async function Page() {
     const { contents: news, totalCount } = await getNewsList({

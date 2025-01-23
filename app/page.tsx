@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-import newsList from "@/app/_components/NewsList"
 import ButtonLink from "./_components/ButtonLink";
 import { getNewsList, News } from "./_libs/microcms";
 import NewsList from "@/app/_components/NewsList";
@@ -10,6 +9,9 @@ import { TOP_NEWS_LIMIT } from "./_components";
 type Props = {
     news: News[];
 };
+
+export const revalidate = 60;
+
 
 export default async function Home() {
     const data = await getNewsList({limit:TOP_NEWS_LIMIT})
@@ -22,7 +24,7 @@ export default async function Home() {
               私達は市場をリードしているグローバルテックカンパニーです。
             </p>
           </div>
-          <img
+          <Image
             className={styles.bgimg}
             src="/img-mv.jpg"
             alt=""
